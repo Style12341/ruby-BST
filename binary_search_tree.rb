@@ -177,3 +177,33 @@ class Tree
   end
 end
 
+
+
+tree = Tree.new(Array.new(15) { rand(1..100) })
+puts 'Balanced tree with elements between 1 and 100'
+puts tree.balanced?
+print 'Level Order: '
+p tree.level_order
+print 'Preorder: '
+p tree.preorder
+print 'Inorder: '
+p tree.inorder
+print 'Posorder: '
+p tree.posorder
+tree.pretty_print
+10.times { tree.insert(rand(100..500)) }
+puts 'After adding 10 elements greater than 100'
+puts tree.balanced?
+tree.pretty_print
+tree.rebalance
+puts 'After rebalancing'
+puts tree.balanced?
+tree.pretty_print
+print 'Level Order: '
+p tree.level_order
+print 'Preorder: '
+p tree.preorder
+print 'Inorder: '
+p tree.inorder
+print 'Posorder: '
+p tree.posorder
